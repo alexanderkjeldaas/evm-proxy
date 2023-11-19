@@ -1,0 +1,27 @@
+# This is a "index source" that specifies the dApp world as you see it.
+#
+# This index defines what interpreters, contract templates etc you want
+# to use, and what they should be called.
+#
+# You can include external sources for this information in the `includes`
+# section, and you include your own smart contract in the `contract_templates`
+# section.
+#
+
+# We currently use a reference to the Coinweb in-house ecosystem definition file for devnet.
+includes:
+- url: >-
+    https://gitlab.com/api/v4/projects/47807501/packages/generic/contract_indexes/0.0.5/in_house_ecosystem_index.yaml
+  blake3: 69ad86532dad9c625a4dfe286b8038dedafdd7571baa0b4ca2457f9264910107
+
+interpreters: {}
+
+contract_templates:
+# Our contract module.  The contract module is an npm package created in the `dist/out`
+# directory using the `yarn build` and `yarn pack` commands.
+- file:///./packages/hello-world.cm/dist/out/my-contract-module.tgz
+- file:///./packages/token-creator.cm/dist/out/my-contract-module.tgz
+- file:///./packages/evm-user-swizzler.cm/dist/out/my-contract-module.tgz
+- file:///./packages/caller.cm/dist/out/my-contract-module.tgz
+- file:///./packages/receiver.cm/dist/out/my-contract-module.tgz
+- file:///./packages/read-claims.cm/dist/out/my-contract-module.tgz

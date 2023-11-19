@@ -1,0 +1,4 @@
+known_dapps_index:
+  url: >-
+    https://gitlab.com/api/v4/projects/47807501/packages/generic/contract_indexes/0.0.5/in_house_ecosystem_index.yaml
+  blake3: 69ad86532dad9c625a4dfe286b8038dedafdd7571baa0b4ca2457f9264910107

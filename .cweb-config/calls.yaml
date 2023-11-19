@@ -1,0 +1,41 @@
+calls:
+- 751f024c085302b7606eaa555b0a6498661f6e6f075c5d043182e9bcdf051f21:
+    args:
+    - DEFAULT
+    - {}
+    auth: false
+    cweb_provided: 80000
+- 77ee98795a1e9221da5907bb5dce4498a7734f771cda5fc12e931b1a81560fce:
+    args:
+    - DEFAULT
+    - '0xccac6d2a38eaa848d7aba580a319a68bbe992be9f4d798a73ec5820ac893316b'
+    auth: false
+    cweb_provided: 80000
+- f6c0276f59c5e4152011077f600dfc1db4ac0f8535491b843787b38990b3b820:
+    args:
+    - DEFAULT
+    auth: false
+    cweb_provided: 80000
+- 379f0870302aee97608dbaf57e2157af5a5f92ec468f217b163c70fd021b3eb9:
+    args:
+    - DEFAULT
+    - issuer:
+        FromSmartContract: '0x751f024c085302b7606eaa555b0a6498661f6e6f075c5d043182e9bcdf051f21'
+      key:
+        first_part: 1
+        second_part: 4
+    auth: false
+    cweb_provided: 80000
+- 0eaff5bf13f1aab2a115d73e6dc94be16ea6f7edc51e61780871b79cec824155:
+    args:
+    - CREATE
+    - my awesome token
+    - buy it, it's really useful!
+    - 10000000
+    auth: true
+    cweb_provided: 1000000000
+- 39e3d98e9f86b1512e1cfabb06201c1f6f140831d05f2f5ce3f17b47acfc9b97:
+    args:
+    - BUY
+    auth: true
+    cweb_provided: 1000000

@@ -1,0 +1,2 @@
+calls:
+  - !include packages/evm-user-swizzler.cm/deploy/.calls-package.yaml

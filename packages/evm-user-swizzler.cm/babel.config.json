@@ -1,0 +1,11 @@
+{
+    "plugins": ["babel-plugin-transform-bigint-to-jsbi"],
+    "env": {
+        "development": {
+            "compact": false
+        },
+        "production": {
+            "compact": true
+        }
+    }
+}

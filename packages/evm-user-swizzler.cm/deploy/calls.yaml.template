@@ -1,0 +1,58 @@
+# this is the contract id
+__CWEB_CONTRACT_SELF_REFERENCE__:
+  args:
+    - "PROXY"
+    # The command to proxy given as the first argument after the method name.
+#    - msg:
+#        cmd:
+#          BuyViaCwebUi:
+#            cweb_amount: "0x100"
+#            limit_token_amount: "1"
+#            token: "22323424324"
+#        on_failure: null
+#        on_success:
+#          contract_input:
+#            authenticated: false
+#            cost: "0x000000000000000000000000000000000000000000000000000000000007a120"
+#            data:
+#              - "OK"
+#              # TODO: add more here
+#              # - name: //tokenName
+#          contract_ref:
+#            stored:
+#              - Claim:
+#                  issuer:
+#                    FromSmartContract: __CWEB_CONTRACT_SELF_REFERENCE__
+#                  key:
+#                    first_part: "RegistrationV0"
+#                    second_part: null
+#      to_broadcaster: null
+    - msg:
+        cmd:
+          CreateTokenUi:
+            extra_fields:
+              - content: "Some token"
+                name: "content"
+              - content: "TEST2"
+                name: "name"
+            memo: "00000000-0000-0000-0000-000000000003"
+            protocol_fields:
+              initial_token_supply: "0x000000000000000000000000000000000000000000000000000000000000000a"
+              issuance_type:
+                Mintable:
+                  minters:
+                    - auth: EcdsaContract
+                      payload: 03951f89fe78e13f295d96eb7afa1e0da726df7d58f9c84f7144e5febc30efeec4
+              token_admin:
+                auth: "0x__CWEB_CONTRACT_SELF_REFERENCE__"
+#                auth: EcdsaContract
+                payload: 03951f89fe78e13f295d96eb7afa1e0da726df7d58f9c84f7144e5febc30efeec4
+              #token_admin:
+              #  auth:
+              #    FromSmartContract: __CWEB_CONTRACT_SELF_REFERENCE__
+              #  payload: "asdf3"
+        on_failure: null
+        on_success: null
+      to_broadcaster: null
+  cweb_provided: 2000000
+  auth: true

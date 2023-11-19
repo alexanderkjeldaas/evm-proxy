@@ -1,0 +1,7 @@
+# this is the contract id
+__CWEB_CONTRACT_SELF_REFERENCE__:
+  # out contract does not take any arguments, so we pass an empty object
+  args: 
+    - "BUY"
+  cweb_provided: 1000000
+  auth: true

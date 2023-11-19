@@ -1,0 +1,32 @@
+calls:
+  - af40f6b6bed15dd9579c84d6d4b99111828f646ec80859ca318354df82dda574:
+      args:
+        - PROXY
+        - msg:
+            cmd:
+              CreateTokenUi:
+                extra_fields:
+                  - content: Some token
+                    name: content
+                  - content: TEST2
+                    name: name
+                memo: 00000000-0000-0000-0000-000000000003
+                protocol_fields:
+                  initial_token_supply: >-
+                    0x000000000000000000000000000000000000000000000000000000000000000a
+                  issuance_type:
+                    Mintable:
+                      minters:
+                        - auth: EcdsaContract
+                          payload: >-
+                            03951f89fe78e13f295d96eb7afa1e0da726df7d58f9c84f7144e5febc30efeec4
+                  token_admin:
+                    auth: >-
+                      0xaf40f6b6bed15dd9579c84d6d4b99111828f646ec80859ca318354df82dda574
+                    payload: >-
+                      03951f89fe78e13f295d96eb7afa1e0da726df7d58f9c84f7144e5febc30efeec4
+            on_failure: null
+            on_success: null
+          to_broadcaster: null
+      cweb_provided: 2000000
+      auth: true

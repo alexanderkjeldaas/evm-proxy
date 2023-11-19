@@ -1,0 +1,44 @@
+{
+    "name": "evm-user-swizzler.cm",
+    "version": "0.0.1",
+    "type": "module",
+    "scripts": {
+        "build": "yarn build:files && yarn pack:all",
+        "build:files": "yarn clean && tsc && NODE_ENV=production ./scripts/build.sh",
+        "start": "node src/offchain/index.js",
+        "test": "echo \"Error: no test specified\"",
+        "pack:all": "yarn pack:cweb && yarn pack:yarn",
+        "pack:cweb": "NODE_NO_WARNINGS=1 cweb-tool pack . dist/out ../../.cweb-config/cweb-pack.yaml",
+        "pack:yarn": "cd dist/out && touch yarn.lock && yarn pack -o my-contract-module.tgz",
+        "prepare-for-package": "./scripts/make-call.sh",
+        "call-contract": "yarn call-contract:prepare && yarn call-contract:invoke",
+        "call-contract:prepare": "./scripts/make-single-call.sh",
+        "call-contract:invoke": "cweb-tool call deploy/calls.yaml ../../.cweb-config/mnemonic.txt DEVNET_L1A https://api-devnet.coinweb.io/wallet",
+        "clean": "rm -rf cweb_dist dist .calls.yaml"
+    },
+    "dependencies": {
+        "@coinweb/contract-kit": "^0.0.17",
+        "@coinweb/self-register": "^0.0.21"
+    },
+    "main": "src/offchain/index.js",
+    "engines": {
+        "cweb_interpreter": "bdd27fb269d6476f0e9f927eac603275bcab8d749b0094d5940ad01cd369b0db"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.23.0",
+        "@babel/core": "^7.23.0",
+        "@babel/node": "^7.22.19",
+        "@babel/plugin-syntax-bigint": "^7.8.3",
+        "@babel/preset-env": "^7.22.20",
+        "@coinweb/cweb-tool": "1.0.11-146cf9b25d087ae7d0d9f319bf9d8682a24621c7",
+        "babel-plugin-extract-text": "^2.0.0",
+        "babel-plugin-transform-bigint-to-jsbi": "^1.0.3",
+        "babelify": "^10.0.0",
+        "esbuild": "^0.19.4",
+        "js-yaml": "^4.1.0",
+        "jsbi": "^4.3.0",
+        "replace": "^1.2.2",
+        "typescript": "^5.3.3",
+        "write-yaml-file": "^5.0.0"
+    }
+}
